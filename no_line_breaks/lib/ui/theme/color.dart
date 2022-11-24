@@ -1,0 +1,55 @@
+import 'package:flutter/material.dart';
+
+// light color
+const lightPrimary = Color(0xFF006590);
+const lightOnPrimary = Color(0xFFffffff);
+const lightPrimaryContainer = Color(0xFFc6e7ff);
+const lightOnPrimaryContainer = Color(0xFF001e2f);
+const lightSecondary = Color(0xFF006c4e);
+const lightOnSecondary = Color(0xFFffffff);
+const lightSecondaryContainer = Color(0xFF83f8cb);
+const lightOnSecondaryContainer = Color(0xFF002115);
+const lightTertiary = Color(0xFF006496);
+const lightOnTertiary = Color(0xFFffffff);
+const lightTertiaryContainer = Color(0xFFcae6ff);
+const lightOnTertiaryContainer = Color(0xFF001e31);
+const lightError = Color(0xFFba1b1b);
+const lightOnError = Color(0xFFffffff);
+const lightErrorContainer = Color(0xFFffdad4);
+const lightOnErrorContainer = Color(0xFF410001);
+const lightBackground = Color(0xFFfbfcff);
+const lightOnBackground = Color(0xFF191c1e);
+const lightSurface = Color(0xFFfbfcff);
+const lightOnSurface = Color(0xFF191c1e);
+const lightSurfaceVariant = Color(0xFFdde3ea);
+const lightOnSurfaceVariant = Color(0xFF41474d);
+const lightOutline = Color(0xFF71787e);
+const lightInverseSurface = Color(0xFF2e3133);
+const lightOnInverseSurface = Color(0xFFf0f1f4);
+
+// dark color
+const darkPrimary = Color(0xFF83cfff);
+const darkOnPrimary = Color(0xFF00344d);
+const darkPrimaryContainer = Color(0xFF004c6e);
+const darkOnPrimaryContainer = Color(0xFFc6e7ff);
+const darkSecondary = Color(0xFF65dbb0);
+const darkOnSecondary = Color(0xFF003827);
+const darkSecondaryContainer = Color(0xFF00513a);
+const darkOnSecondaryContainer = Color(0xFF83f8cb);
+const darkTertiary = Color(0xFF8ccdff);
+const darkOnTertiary = Color(0xFF003350);
+const darkTertiaryContainer = Color(0xFF004b72);
+const darkOnTertiaryContainer = Color(0xFFcae6ff);
+const darkError = Color(0xFFffb4a9);
+const darkOnError = Color(0xFF680003);
+const darkErrorContainer = Color(0xFF930006);
+const darkOnErrorContainer = Color(0xFFffdad4);
+const darkBackground = Color(0xFF191c1e);
+const darkOnBackground = Color(0xFFe1e2e5);
+const darkSurface = Color(0xFF191c1e);
+const darkOnSurface = Color(0xFFe1e2e5);
+const darkSurfaceVariant = Color(0xFF41474d);
+const darkOnSurfaceVariant = Color(0xFFc1c7ce);
+const darkOutline = Color(0xFF8b9197);
+const darkInverseSurface = Color(0xFFe1e2e5);
+const darkOnInverseSurface = Color(0xFF191c1e);
