@@ -24,6 +24,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
+      - run: cd ./no_line_breaks
       - run: flutter --version
       - run: flutter pub get
       - run: flutter build web --web-renderer html --base-href /${{ steps.version.outputs.repository }}/
