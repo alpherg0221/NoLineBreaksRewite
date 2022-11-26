@@ -68,7 +68,7 @@ ThemeData _lightTheme = ThemeData.from(
 );
 
 ThemeData lightTheme = _lightTheme.copyWith(
-    textTheme: GoogleFonts.jetBrainsMonoTextTheme(_lightTheme.textTheme)
+    textTheme: GoogleFonts.sawarabiGothicTextTheme(_lightTheme.textTheme)
 );
 
 ThemeData _darkTheme = ThemeData.from(
@@ -77,7 +77,7 @@ ThemeData _darkTheme = ThemeData.from(
 );
 
 ThemeData darkTheme = _darkTheme.copyWith(
-    textTheme: GoogleFonts.jetBrainsMonoTextTheme(_darkTheme.textTheme)
+    textTheme: GoogleFonts.sawarabiGothicTextTheme(_darkTheme.textTheme)
 );
 
 SettingsThemeData lightSettingsTheme = SettingsThemeData(

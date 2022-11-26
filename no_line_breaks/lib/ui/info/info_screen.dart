@@ -26,15 +26,23 @@ class InfoScreen extends HookConsumerWidget {
                     SettingsTile(
                       title: const Text('Github'),
                       leading: const Icon(Icons.open_in_new_rounded),
-                      onPressed: (_) => {
-                        html.window.open(
-                          'https://github.com/alpherg0221/NoLineBreaksRewite',
-                          '',
-                        )
-                      },
-                    )
+                      onPressed: (_) async => html.window.open(
+                        'https://github.com/alpherg0221/NoLineBreaksRewite',
+                        '',
+                      ),
+                    ),
                   ],
-                )
+                ),
+                SettingsSection(
+                  title: const Text('その他'),
+                  tiles: <SettingsTile>[
+                    SettingsTile(
+                      title: const Text('License'),
+                      leading: const Icon(Icons.description_rounded),
+                      onPressed: (context) => showLicensePage(context: context),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
