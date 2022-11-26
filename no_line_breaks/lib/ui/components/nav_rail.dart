@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:no_line_breaks/route/app_route.dart';
 import 'package:no_line_breaks/route/route_path.dart';
 
 class NavRail extends HookConsumerWidget {
@@ -8,14 +8,10 @@ class NavRail extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final appRouter = ref.watch(appRouterProvider);
-
-    final isActive = appRouter.current.isActive;
-    final path = appRouter.current.path;
-
     return NavigationRail(
-      selectedIndex: isActive ? RoutePath.getIndex(path) : 0,
-      labelType: NavigationRailLabelType.selected,
+      selectedIndex:
+          RoutePath.values.indexWhere((e) => e.path == Get.currentRoute),
+      labelType: NavigationRailLabelType.all,
       useIndicator: true,
       groupAlignment: 0.0,
       destinations: const <NavigationRailDestination>[
@@ -29,9 +25,14 @@ class NavRail extends HookConsumerWidget {
           selectedIcon: Icon(Icons.settings_rounded),
           label: Text('Settings'),
         ),
+        NavigationRailDestination(
+          icon: Icon(Icons.info_outline_rounded),
+          selectedIcon: Icon(Icons.info_rounded),
+          label: Text('Info'),
+        ),
       ],
       onDestinationSelected: (int index) {
-        appRouter.pushNamed(RoutePath.getPath(index));
+        Get.toNamed(RoutePath.values[index].path);
       },
     );
   }

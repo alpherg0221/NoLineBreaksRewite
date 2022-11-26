@@ -1,72 +1,95 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import 'color.dart';
-import 'type.dart';
-
-const ColorScheme lightColor = ColorScheme.light(
-  primary: lightPrimary,
-  onPrimary: lightOnPrimary,
-  primaryContainer: lightPrimaryContainer,
-  onPrimaryContainer: lightOnPrimaryContainer,
-  secondary: lightSecondary,
-  onSecondary: lightOnSecondary,
-  secondaryContainer: lightSecondaryContainer,
-  onSecondaryContainer: lightOnSecondaryContainer,
-  tertiary: lightTertiary,
-  onTertiary: lightOnTertiary,
-  tertiaryContainer: lightTertiaryContainer,
-  onTertiaryContainer: lightOnTertiaryContainer,
-  error: lightError,
-  onError: lightOnError,
-  errorContainer: lightErrorContainer,
-  onErrorContainer: lightOnErrorContainer,
-  background: lightBackground,
-  onBackground: lightOnBackground,
-  surface: lightSurface,
-  onSurface: lightOnSurface,
-  surfaceVariant: lightSurfaceVariant,
-  onSurfaceVariant: lightOnSurfaceVariant,
-  outline: lightOutline,
-  inverseSurface: lightInverseSurface,
-  onInverseSurface: lightOnInverseSurface,
-);
+import 'package:no_line_breaks/ui/theme/color.dart';
+import 'package:settings_ui/settings_ui.dart';
 
 const ColorScheme darkColor = ColorScheme.dark(
-  primary: darkPrimary,
-  onPrimary: darkOnPrimary,
-  primaryContainer: darkPrimaryContainer,
-  onPrimaryContainer: darkOnPrimaryContainer,
-  secondary: darkSecondary,
-  onSecondary: darkOnSecondary,
-  secondaryContainer: darkSecondaryContainer,
-  onSecondaryContainer: darkOnSecondaryContainer,
-  tertiary: darkTertiary,
-  onTertiary: darkOnTertiary,
-  tertiaryContainer: darkTertiaryContainer,
-  onTertiaryContainer: darkOnTertiaryContainer,
-  error: darkError,
-  onError: darkOnError,
-  errorContainer: darkErrorContainer,
-  onErrorContainer: darkOnErrorContainer,
-  background: darkBackground,
-  onBackground: darkOnBackground,
-  surface: darkSurface,
-  onSurface: darkOnSurface,
-  surfaceVariant: darkSurfaceVariant,
-  onSurfaceVariant: darkOnSurfaceVariant,
-  outline: darkOutline,
-  inverseSurface: darkInverseSurface,
-  onInverseSurface: darkOnInverseSurface,
+  primary: blue80,
+  onPrimary: blue20,
+  primaryContainer: blue30,
+  onPrimaryContainer: blue90,
+  inversePrimary: blue40,
+  secondary: jade80,
+  onSecondary: jade20,
+  secondaryContainer: jade30,
+  onSecondaryContainer: jade90,
+  tertiary: nadeshiko80,
+  onTertiary: nadeshiko20,
+  tertiaryContainer: nadeshiko30,
+  onTertiaryContainer: nadeshiko90,
+  error: red80,
+  onError: red20,
+  errorContainer: red30,
+  onErrorContainer: red90,
+  background: gray10,
+  onBackground: gray90,
+  surface: gray10,
+  onSurface: gray90,
+  inverseSurface: gray90,
+  onInverseSurface: gray20,
+  surfaceVariant: grayVariant30,
+  onSurfaceVariant: grayVariant80,
+  outline: grayVariant60,
 );
 
-ThemeData lightTheme = ThemeData.from(
+const ColorScheme lightColor = ColorScheme.light(
+  primary: blue40,
+  onPrimary: Colors.white,
+  primaryContainer: blue90,
+  onPrimaryContainer: blue10,
+  inversePrimary: blue80,
+  secondary: jade40,
+  onSecondary: Colors.white,
+  secondaryContainer: jade90,
+  onSecondaryContainer: jade10,
+  tertiary: nadeshiko40,
+  onTertiary: Colors.white,
+  tertiaryContainer: nadeshiko90,
+  onTertiaryContainer: nadeshiko10,
+  error: red40,
+  onError: Colors.white,
+  errorContainer: red90,
+  onErrorContainer: red10,
+  background: gray99,
+  onBackground: gray10,
+  surface: gray99,
+  onSurface: gray10,
+  inverseSurface: gray20,
+  onInverseSurface: gray95,
+  surfaceVariant: grayVariant90,
+  onSurfaceVariant: grayVariant30,
+  outline: grayVariant50,
+);
+
+ThemeData _lightTheme = ThemeData.from(
   colorScheme: lightColor,
-  textTheme: jetBrainsMonoTextTheme,
   useMaterial3: true,
 );
 
-ThemeData darkTheme = ThemeData.from(
+ThemeData lightTheme = _lightTheme.copyWith(
+    textTheme: GoogleFonts.jetBrainsMonoTextTheme(_lightTheme.textTheme)
+);
+
+ThemeData _darkTheme = ThemeData.from(
   colorScheme: darkColor,
-  textTheme: jetBrainsMonoTextTheme,
   useMaterial3: true,
+);
+
+ThemeData darkTheme = _darkTheme.copyWith(
+    textTheme: GoogleFonts.jetBrainsMonoTextTheme(_darkTheme.textTheme)
+);
+
+SettingsThemeData lightSettingsTheme = SettingsThemeData(
+  trailingTextColor: lightColor.onBackground,
+  settingsListBackground: lightColor.background,
+  settingsSectionBackground: lightColor.background,
+  dividerColor: grayVariant80,
+);
+
+SettingsThemeData darkSettingsTheme = SettingsThemeData(
+  trailingTextColor: darkColor.onBackground,
+  settingsListBackground: darkColor.background,
+  settingsSectionBackground: darkColor.background,
+  dividerColor: grayVariant30,
 );

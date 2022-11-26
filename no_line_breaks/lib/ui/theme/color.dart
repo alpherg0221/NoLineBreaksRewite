@@ -1,55 +1,47 @@
 import 'package:flutter/material.dart';
 
-// light color
-const lightPrimary = Color(0xFF006590);
-const lightOnPrimary = Color(0xFFffffff);
-const lightPrimaryContainer = Color(0xFFc6e7ff);
-const lightOnPrimaryContainer = Color(0xFF001e2f);
-const lightSecondary = Color(0xFF006c4e);
-const lightOnSecondary = Color(0xFFffffff);
-const lightSecondaryContainer = Color(0xFF83f8cb);
-const lightOnSecondaryContainer = Color(0xFF002115);
-const lightTertiary = Color(0xFF006496);
-const lightOnTertiary = Color(0xFFffffff);
-const lightTertiaryContainer = Color(0xFFcae6ff);
-const lightOnTertiaryContainer = Color(0xFF001e31);
-const lightError = Color(0xFFba1b1b);
-const lightOnError = Color(0xFFffffff);
-const lightErrorContainer = Color(0xFFffdad4);
-const lightOnErrorContainer = Color(0xFF410001);
-const lightBackground = Color(0xFFfbfcff);
-const lightOnBackground = Color(0xFF191c1e);
-const lightSurface = Color(0xFFfbfcff);
-const lightOnSurface = Color(0xFF191c1e);
-const lightSurfaceVariant = Color(0xFFdde3ea);
-const lightOnSurfaceVariant = Color(0xFF41474d);
-const lightOutline = Color(0xFF71787e);
-const lightInverseSurface = Color(0xFF2e3133);
-const lightOnInverseSurface = Color(0xFFf0f1f4);
+// primary color - #05A2B2
+const blue10 = Color(0xFF001f24);
+const blue20 = Color(0xFF00363C);
+const blue30 = Color(0xFF004F57);
+const blue40 = Color(0xFF006973);
+const blue80 = Color(0xFF4FD8EA);
+const blue90 = Color(0xFF94F1FF);
 
-// dark color
-const darkPrimary = Color(0xFF83cfff);
-const darkOnPrimary = Color(0xFF00344d);
-const darkPrimaryContainer = Color(0xFF004c6e);
-const darkOnPrimaryContainer = Color(0xFFc6e7ff);
-const darkSecondary = Color(0xFF65dbb0);
-const darkOnSecondary = Color(0xFF003827);
-const darkSecondaryContainer = Color(0xFF00513a);
-const darkOnSecondaryContainer = Color(0xFF83f8cb);
-const darkTertiary = Color(0xFF8ccdff);
-const darkOnTertiary = Color(0xFF003350);
-const darkTertiaryContainer = Color(0xFF004b72);
-const darkOnTertiaryContainer = Color(0xFFcae6ff);
-const darkError = Color(0xFFffb4a9);
-const darkOnError = Color(0xFF680003);
-const darkErrorContainer = Color(0xFF930006);
-const darkOnErrorContainer = Color(0xFFffdad4);
-const darkBackground = Color(0xFF191c1e);
-const darkOnBackground = Color(0xFFe1e2e5);
-const darkSurface = Color(0xFF191c1e);
-const darkOnSurface = Color(0xFFe1e2e5);
-const darkSurfaceVariant = Color(0xFF41474d);
-const darkOnSurfaceVariant = Color(0xFFc1c7ce);
-const darkOutline = Color(0xFF8b9197);
-const darkInverseSurface = Color(0xFFe1e2e5);
-const darkOnInverseSurface = Color(0xFF191c1e);
+// secondary color - #38B48B
+const jade10 = Color(0xFF002116);
+const jade20 = Color(0xFF003828);
+const jade30 = Color(0xFF00513B);
+const jade40 = Color(0xFF006C4F);
+const jade80 = Color(0xFF65DBB0);
+const jade90 = Color(0xFF83F8CB);
+
+// tertiary color - #EEBBCB
+const nadeshiko10 = Color(0xFF3E0020);
+const nadeshiko20 = Color(0xFF5D1136);
+const nadeshiko30 = Color(0xFF7A294D);
+const nadeshiko40 = Color(0xFF974065);
+const nadeshiko80 = Color(0xFFFFB0CB);
+const nadeshiko90 = Color(0xFFFFD9E4);
+
+// error color
+const red10 = Color(0xFF410002);
+const red20 = Color(0xFF690005);
+const red30 = Color(0xFF93000A);
+const red40 = Color(0xFFBA1A1A);
+const red80 = Color(0xFFFFB4AB);
+const red90 = Color(0xFFFFDAD6);
+
+// neutral color
+const gray10 = Color(0xFF191C1D);
+const gray20 = Color(0xFF2E3132);
+const gray90 = Color(0xFFE1E3E3);
+const gray95 = Color(0xFFEFF1F1);
+const gray99 = Color(0xFFFAFDFD);
+
+// neutral variant color
+const grayVariant30 = Color(0xFF3F484A);
+const grayVariant50 = Color(0xFF6F797A);
+const grayVariant60 = Color(0xFF899294);
+const grayVariant80 = Color(0xFFBFC8CA);
+const grayVariant90 = Color(0xFFDBE4E6);

@@ -1,6 +1,7 @@
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:no_line_breaks/utils/text_formatter.dart';
 
@@ -27,6 +28,13 @@ class HomeViewModel extends StateNotifier<HomeState> {
 
   Future<void> copyText() async {
     Clipboard.setData(ClipboardData(text: state.fixedText));
+    Get.snackbar(
+      'NoLineBreaks',
+      'Copied text',
+      snackStyle: SnackStyle.FLOATING,
+      icon: const Icon(Icons.copy_rounded),
+      shouldIconPulse: true,
+    );
   }
 
   Future<void> openInDeepL() async {
