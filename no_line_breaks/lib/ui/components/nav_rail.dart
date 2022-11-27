@@ -37,3 +37,18 @@ class NavRail extends HookConsumerWidget {
     );
   }
 }
+
+class NavRailLayout extends HookConsumerWidget {
+  const NavRailLayout({super.key, required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) => Row(
+        children: [
+          const NavRail(),
+          const VerticalDivider(thickness: 1, width: 1),
+          Expanded(child: child),
+        ],
+      );
+}

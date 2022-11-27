@@ -17,53 +17,47 @@ class SettingsScreen extends HookConsumerWidget {
     final state = ref.watch(settingsStateProvider);
 
     return Scaffold(
-      body: Row(
-        children: [
-          const NavRail(),
-          const VerticalDivider(thickness: 1, width: 1),
-          Expanded(
-            child: SettingsList(
-              lightTheme: lightSettingsTheme,
-              darkTheme: darkSettingsTheme,
-              sections: [
-                SettingsSection(
-                  title: const Text('表示'),
-                  tiles: <SettingsTile>[
-                    SettingsTile(
-                      title: const Text('テキストサイズ'),
-                      leading: const Icon(Icons.format_size_rounded),
-                      value: Text(state.textSize.toDisplay()),
-                      onPressed: (_) async => Get.dialog(
-                        const SelectTextSizeDialog(),
-                      ),
-                    ),
-                    SettingsTile.switchTile(
-                      title: const Text('1文ごとに改行する'),
-                      leading: const Icon(Icons.format_line_spacing_rounded),
-                      initialValue: state.isBreakLine,
-                      onToggle: (value) async {
-                        return viewModel.changeIsBreakLine(value);
-                      },
-                    ),
-                  ],
+      body: NavRailLayout(
+        child: SettingsList(
+          lightTheme: lightSettingsTheme,
+          darkTheme: darkSettingsTheme,
+          sections: [
+            SettingsSection(
+              title: const Text('表示'),
+              tiles: <SettingsTile>[
+                SettingsTile(
+                  title: const Text('テキストサイズ'),
+                  leading: const Icon(Icons.format_size_rounded),
+                  value: Text(state.textSize.toDisplay()),
+                  onPressed: (_) async => Get.dialog(
+                    const SelectTextSizeDialog(),
+                  ),
                 ),
-                SettingsSection(
-                  title: const Text('一般'),
-                  tiles: <SettingsTile>[
-                    SettingsTile(
-                      title: const Text('テーマ'),
-                      leading: const Icon(Icons.brightness_4_rounded),
-                      value: Text(state.themeMode.toDisplay()),
-                      onPressed: (context) async => Get.dialog(
-                        const SelectThemeDialog(),
-                      ),
-                    ),
-                  ],
+                SettingsTile.switchTile(
+                  title: const Text('1文ごとに改行する'),
+                  leading: const Icon(Icons.format_line_spacing_rounded),
+                  initialValue: state.isBreakLine,
+                  onToggle: (value) async {
+                    return viewModel.changeIsBreakLine(value);
+                  },
                 ),
               ],
             ),
-          ),
-        ],
+            SettingsSection(
+              title: const Text('一般'),
+              tiles: <SettingsTile>[
+                SettingsTile(
+                  title: const Text('テーマ'),
+                  leading: const Icon(Icons.brightness_4_rounded),
+                  value: Text(state.themeMode.toDisplay()),
+                  onPressed: (context) async => Get.dialog(
+                    const SelectThemeDialog(),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

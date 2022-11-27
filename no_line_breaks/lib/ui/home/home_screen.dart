@@ -30,74 +30,67 @@ class HomeScreen extends HookConsumerWidget {
     });
 
     return Scaffold(
-      body: Row(
-        children: [
-          const NavRail(),
-          const VerticalDivider(thickness: 1, width: 1),
-          Expanded(
-            child: Container(
-              margin: const EdgeInsets.all(48),
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                border: Border.all(color: borderColor, width: 2.0),
-                borderRadius: BorderRadius.circular(4.0),
+      body: NavRailLayout(
+        child: Container(
+          margin: const EdgeInsets.all(48),
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            border: Border.all(color: borderColor, width: 2.0),
+            borderRadius: BorderRadius.circular(4.0),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    ExpandedNoBorderTextField(
+                      controller: editController,
+                      onChanged: (value) {
+                        viewModel.changeText(value, settingsState.isBreakLine);
+                      },
+                      fontSize: settingsState.textSize.toDouble(),
+                    ),
+                    VerticalDivider(color: borderColor),
+                    ExpandedNoBorderTextField(
+                      controller: readController,
+                      fontSize: settingsState.textSize.toDouble(),
+                      readOnly: true,
+                    ),
+                  ],
+                ),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              Divider(color: borderColor),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        ExpandedNoBorderTextField(
-                          controller: editController,
-                          onChanged: (value) {
-                            viewModel.changeText(
-                                value, settingsState.isBreakLine);
-                          },
-                          fontSize: settingsState.textSize.toDouble(),
-                        ),
-                        VerticalDivider(color: borderColor),
-                        ExpandedNoBorderTextField(
-                          controller: readController,
-                          fontSize: settingsState.textSize.toDouble(),
-                          readOnly: true,
-                        ),
-                      ],
-                    ),
+                  IconButton(
+                    onPressed: viewModel.copyText,
+                    iconSize: 48.0,
+                    icon: const Icon(Icons.copy_rounded),
+                    tooltip: 'Copy',
                   ),
-                  Divider(color: borderColor),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        onPressed: viewModel.copyText,
-                        iconSize: 48.0,
-                        icon: const Icon(Icons.copy_rounded),
-                        tooltip: 'Copy',
-                      ),
-                      IconButton(
-                        onPressed: viewModel.openInDeepL,
-                        iconSize: 48.0,
-                        icon: const Icon(Icons.open_in_new_rounded),
-                        tooltip: 'Open in DeepL',
-                      ),
-                      IconButton(
-                        onPressed: viewModel.deleteAll,
-                        iconSize: 48.0,
-                        icon: const Icon(Icons.delete_forever_outlined),
-                        tooltip: 'Delete all',
-                      ),
-                    ],
+                  IconButton(
+                    onPressed: viewModel.openInDeepL,
+                    iconSize: 48.0,
+                    icon: const Icon(Icons.open_in_new_rounded),
+                    tooltip: 'Open in DeepL',
+                  ),
+                  IconButton(
+                    onPressed: viewModel.deleteAll,
+                    iconSize: 48.0,
+                    icon: const Icon(Icons.delete_forever_outlined),
+                    tooltip: 'Delete all',
                   ),
                 ],
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

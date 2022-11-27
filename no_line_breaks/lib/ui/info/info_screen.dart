@@ -11,42 +11,36 @@ class InfoScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: Row(
-        children: [
-          const NavRail(),
-          const VerticalDivider(thickness: 1, width: 1),
-          Expanded(
-            child: SettingsList(
-              lightTheme: lightSettingsTheme,
-              darkTheme: darkSettingsTheme,
-              sections: [
-                SettingsSection(
-                  title: const Text('開発者'),
-                  tiles: <SettingsTile>[
-                    SettingsTile(
-                      title: const Text('Github'),
-                      leading: const Icon(Icons.open_in_new_rounded),
-                      onPressed: (_) async => html.window.open(
-                        'https://github.com/alpherg0221/NoLineBreaksRewite',
-                        '',
-                      ),
-                    ),
-                  ],
-                ),
-                SettingsSection(
-                  title: const Text('その他'),
-                  tiles: <SettingsTile>[
-                    SettingsTile(
-                      title: const Text('License'),
-                      leading: const Icon(Icons.description_rounded),
-                      onPressed: (context) => showLicensePage(context: context),
-                    ),
-                  ],
+      body: NavRailLayout(
+        child: SettingsList(
+          lightTheme: lightSettingsTheme,
+          darkTheme: darkSettingsTheme,
+          sections: [
+            SettingsSection(
+              title: const Text('開発者'),
+              tiles: <SettingsTile>[
+                SettingsTile(
+                  title: const Text('Github'),
+                  leading: const Icon(Icons.open_in_new_rounded),
+                  onPressed: (_) async => html.window.open(
+                    'https://github.com/alpherg0221/NoLineBreaksRewite',
+                    '',
+                  ),
                 ),
               ],
             ),
-          ),
-        ],
+            SettingsSection(
+              title: const Text('その他'),
+              tiles: <SettingsTile>[
+                SettingsTile(
+                  title: const Text('License'),
+                  leading: const Icon(Icons.description_rounded),
+                  onPressed: (context) => showLicensePage(context: context),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
