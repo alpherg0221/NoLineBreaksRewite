@@ -52,6 +52,7 @@ class HomeScreen extends HookConsumerWidget {
                       onChanged: (value) {
                         viewModel.changeText(value, settingsState.isBreakLine);
                       },
+                      onClear: viewModel.deleteAll,
                       fontSize: settingsState.textSize.toDouble(),
                     ),
                     VerticalDivider(color: borderColor),
@@ -79,12 +80,6 @@ class HomeScreen extends HookConsumerWidget {
                     iconSize: 48.0,
                     icon: const Icon(Icons.open_in_new_rounded),
                     tooltip: 'Open in DeepL',
-                  ),
-                  IconButton(
-                    onPressed: viewModel.deleteAll,
-                    iconSize: 48.0,
-                    icon: const Icon(Icons.delete_forever_outlined),
-                    tooltip: 'Delete all',
                   ),
                 ],
               ),
